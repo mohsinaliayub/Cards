@@ -16,7 +16,14 @@ struct ResizableView: View {
     /// Hold the previous offset, because drag gesture sets value.translation to zero at start of the drag.
     @State private var previousOffset: CGSize = .zero
     /// Hold the previous rotation angle.
+    ///
+    /// The previous rotation angle will be stored as long as the user is rotation. After the
+    /// user removes their finger from the screen, it will be set back to .zero.
     @State private var previousRotation: Angle = .zero
+    /// The size of the view when you're scaling.
+    ///
+    /// It will be set back to 1 after the magnification gesture is finished.
+    @State private var scale: CGFloat = 1.0
     
     var body: some View {
         let dragGesture = DragGesture()
@@ -36,13 +43,23 @@ struct ResizableView: View {
                 previousRotation = .zero
             }
         
+        let scaleGesture = MagnificationGesture()
+            .onChanged { scale in
+                self.scale = scale
+            }
+            .onEnded { scale in
+                transform.size.width *= scale; transform.size.height *= scale
+                self.scale = 1.0
+            }
+        
         content
             .frame(width: transform.size.width, height: transform.size.height)
             .foregroundColor(color)
-            .rotationEffect(transform.rotation)
             .offset(transform.offset)
+            .rotationEffect(transform.rotation)
+            .scaleEffect(scale)
             .gesture(dragGesture)
-            .gesture(rotationGesture)
+            .gesture(SimultaneousGesture(rotationGesture, scaleGesture))
     }
 }
 
