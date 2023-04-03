@@ -68,8 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				6843803E29DB6BF000CE3C68 /* CardsApp.swift */,
-				6843805329DB6E6E00CE3C68 /* ViewState.swift */,
-				6843805929DB780D00CE3C68 /* CardModal.swift */,
+				6843805E29DB7ECB00CE3C68 /* Model */,
 				6843804C29DB6C5700CE3C68 /* Views */,
 				6843804229DB6BF100CE3C68 /* Assets.xcassets */,
 				6843804429DB6BF100CE3C68 /* Preview Content */,
@@ -88,15 +87,32 @@
 		6843804C29DB6C5700CE3C68 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6843804029DB6BF000CE3C68 /* ContentView.swift */,
+				6843805D29DB7E9B00CE3C68 /* Single Card Views */,
 				6843804D29DB6C8300CE3C68 /* CardsListView.swift */,
-				6843804F29DB6D7300CE3C68 /* CardThumbnailView.swift */,
-				6843805129DB6DDF00CE3C68 /* SingleCardView.swift */,
 				6843805529DB6F9E00CE3C68 /* CardsView.swift */,
+				6843804F29DB6D7300CE3C68 /* CardThumbnailView.swift */,
+				6843804029DB6BF000CE3C68 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6843805D29DB7E9B00CE3C68 /* Single Card Views */ = {
+			isa = PBXGroup;
+			children = (
+				6843805129DB6DDF00CE3C68 /* SingleCardView.swift */,
 				6843805729DB725300CE3C68 /* CardDetailView.swift */,
 				6843805B29DB783700CE3C68 /* CardBottomToolbar.swift */,
 			);
-			path = Views;
+			path = "Single Card Views";
+			sourceTree = "<group>";
+		};
+		6843805E29DB7ECB00CE3C68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6843805329DB6E6E00CE3C68 /* ViewState.swift */,
+				6843805929DB780D00CE3C68 /* CardModal.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
