@@ -15,6 +15,8 @@ struct ResizableView: View {
     @State private var transform = Transform()
     /// Hold the previous offset, because drag gesture sets value.translation to zero at start of the drag.
     @State private var previousOffset: CGSize = .zero
+    /// Hold the previous rotation angle.
+    @State private var previousRotation: Angle = .zero
     
     var body: some View {
         let dragGesture = DragGesture()
@@ -25,11 +27,22 @@ struct ResizableView: View {
                 previousOffset = transform.offset
             }
         
+        let rotationGesture = RotationGesture()
+            .onChanged { rotation in
+                transform.rotation += rotation - previousRotation
+                previousRotation = rotation
+            }
+            .onEnded { _ in
+                previousRotation = .zero
+            }
+        
         content
             .frame(width: transform.size.width, height: transform.size.height)
             .foregroundColor(color)
+            .rotationEffect(transform.rotation)
             .offset(transform.offset)
             .gesture(dragGesture)
+            .gesture(rotationGesture)
     }
 }
 
