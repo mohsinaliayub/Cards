@@ -21,6 +21,7 @@
 		6843805C29DB783700CE3C68 /* CardBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843805B29DB783700CE3C68 /* CardBottomToolbar.swift */; };
 		6843806029DB802C00CE3C68 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843805F29DB802C00CE3C68 /* ResizableView.swift */; };
 		6843806229DB80D000CE3C68 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843806129DB80D000CE3C68 /* Transform.swift */; };
+		6843806429DB850F00CE3C68 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843806329DB850F00CE3C68 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		6843805B29DB783700CE3C68 /* CardBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBottomToolbar.swift; sourceTree = "<group>"; };
 		6843805F29DB802C00CE3C68 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 		6843806129DB80D000CE3C68 /* Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		6843806329DB850F00CE3C68 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				6843803E29DB6BF000CE3C68 /* CardsApp.swift */,
+				6843806329DB850F00CE3C68 /* Operators.swift */,
 				6843805E29DB7ECB00CE3C68 /* Model */,
 				6843804C29DB6C5700CE3C68 /* Views */,
 				6843804229DB6BF100CE3C68 /* Assets.xcassets */,
@@ -200,6 +203,7 @@
 				6843805C29DB783700CE3C68 /* CardBottomToolbar.swift in Sources */,
 				6843806029DB802C00CE3C68 /* ResizableView.swift in Sources */,
 				6843805029DB6D7300CE3C68 /* CardThumbnailView.swift in Sources */,
+				6843806429DB850F00CE3C68 /* Operators.swift in Sources */,
 				6843805A29DB780D00CE3C68 /* CardModal.swift in Sources */,
 				6843806229DB80D000CE3C68 /* Transform.swift in Sources */,
 				6843805829DB725400CE3C68 /* CardDetailView.swift in Sources */,
