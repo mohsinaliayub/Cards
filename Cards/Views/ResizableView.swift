@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-struct ResizableView: View {
-    private let content = RoundedRectangle(cornerRadius: 30)
-    private let color = Color.red
-    
+struct ResizableView: ViewModifier {
     /// The transform of view.
     @State private var transform = Transform()
     /// Hold the previous offset, because drag gesture sets value.translation to zero at start of the drag.
@@ -25,7 +22,7 @@ struct ResizableView: View {
     /// It will be set back to 1 after the magnification gesture is finished.
     @State private var scale: CGFloat = 1.0
     
-    var body: some View {
+    func body(content: Content) -> some View {
         let dragGesture = DragGesture()
             .onChanged { value in
                 transform.offset = value.translation + previousOffset
@@ -54,10 +51,9 @@ struct ResizableView: View {
         
         content
             .frame(width: transform.size.width, height: transform.size.height)
-            .foregroundColor(color)
-            .offset(transform.offset)
             .rotationEffect(transform.rotation)
             .scaleEffect(scale)
+            .offset(transform.offset)
             .gesture(dragGesture)
             .gesture(SimultaneousGesture(rotationGesture, scaleGesture))
     }
@@ -65,6 +61,8 @@ struct ResizableView: View {
 
 struct ResizableView_Previews: PreviewProvider {
     static var previews: some View {
-        ResizableView()
+        RoundedRectangle(cornerRadius: 30.0)
+            .foregroundColor(.red)
+            .modifier(ResizableView())
     }
 }
