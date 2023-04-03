@@ -13,11 +13,25 @@ struct ResizableView: View {
     
     /// The transform of view.
     @State private var transform = Transform()
+    /// Hold the previous offset, because drag gesture sets value.translation to zero at start of the drag.
+    @State private var previousOffset: CGSize = .zero
     
     var body: some View {
+        let dragGesture = DragGesture()
+            .onChanged { value in
+                transform.offset = CGSize(
+                    width: value.translation.width + previousOffset.width,
+                    height: value.translation.height + previousOffset.height)
+            }
+            .onEnded { _ in
+                previousOffset = transform.offset
+            }
+        
         content
             .frame(width: transform.size.width, height: transform.size.height)
             .foregroundColor(color)
+            .offset(transform.offset)
+            .gesture(dragGesture)
     }
 }
 
