@@ -18,6 +18,7 @@ struct CardThumbnailView: View {
                    height: Settings.thumbnailSize.height)
             .onTapGesture {
                 viewState.showAllCards.toggle()
+                viewState.selectedCard = card
             }
     }
 }
