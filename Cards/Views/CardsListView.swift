@@ -16,6 +16,11 @@ struct CardsListView: View {
             VStack {
                 ForEach(store.cards) { card in
                     CardThumbnailView(card: card)
+                        .contextMenu {
+                            Button(action: { store.remove(card) }) {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
                 }
             }
         }
