@@ -32,6 +32,8 @@
 		6843807729DC17AA00CE3C68 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843807629DC17AA00CE3C68 /* Card.swift */; };
 		6843807A29DC184C00CE3C68 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843807929DC184C00CE3C68 /* CardStore.swift */; };
 		6843807C29DC231E00CE3C68 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843807B29DC231E00CE3C68 /* CardElementView.swift */; };
+		6843807F29E4A2EB00CE3C68 /* Stickers in Resources */ = {isa = PBXBuildFile; fileRef = 6843807E29E4A2EA00CE3C68 /* Stickers */; };
+		6843808229E4A3A000CE3C68 /* StickerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843808129E4A3A000CE3C68 /* StickerPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		6843807929DC184C00CE3C68 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		6843807B29DC231E00CE3C68 /* CardElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElementView.swift; sourceTree = "<group>"; };
 		6843807D29E49E2200CE3C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6843807E29E4A2EA00CE3C68 /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stickers; path = "../../../../Documents/Books Code/suia-materials-editions-1.0/16-adding-assets-to-your-app/assets/Stickers"; sourceTree = "<group>"; };
+		6843808129E4A3A000CE3C68 /* StickerPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				6843806529DB8B6D00CE3C68 /* Extensions */,
 				6843805E29DB7ECB00CE3C68 /* Model */,
 				6843804C29DB6C5700CE3C68 /* Views */,
+				6843807E29E4A2EA00CE3C68 /* Stickers */,
 				6843804229DB6BF100CE3C68 /* Assets.xcassets */,
 				6843804429DB6BF100CE3C68 /* Preview Content */,
 			);
@@ -131,6 +136,7 @@
 		6843805D29DB7E9B00CE3C68 /* Single Card Views */ = {
 			isa = PBXGroup;
 			children = (
+				6843808029E4A38F00CE3C68 /* Card Modal Views */,
 				6843805129DB6DDF00CE3C68 /* SingleCardView.swift */,
 				6843805729DB725300CE3C68 /* CardDetailView.swift */,
 				6843805B29DB783700CE3C68 /* CardBottomToolbar.swift */,
@@ -186,6 +192,14 @@
 				6843807929DC184C00CE3C68 /* CardStore.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		6843808029E4A38F00CE3C68 /* Card Modal Views */ = {
+			isa = PBXGroup;
+			children = (
+				6843808129E4A3A000CE3C68 /* StickerPicker.swift */,
+			);
+			path = "Card Modal Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6843804629DB6BF100CE3C68 /* Preview Assets.xcassets in Resources */,
+				6843807F29E4A2EB00CE3C68 /* Stickers in Resources */,
 				6843804329DB6BF100CE3C68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +290,7 @@
 				6843806429DB850F00CE3C68 /* Operators.swift in Sources */,
 				6843805A29DB780D00CE3C68 /* CardModal.swift in Sources */,
 				6843807129DC147900CE3C68 /* PreviewData.swift in Sources */,
+				6843808229E4A3A000CE3C68 /* StickerPicker.swift in Sources */,
 				6843807C29DC231E00CE3C68 /* CardElementView.swift in Sources */,
 				6843807729DC17AA00CE3C68 /* Card.swift in Sources */,
 				6843806229DB80D000CE3C68 /* Transform.swift in Sources */,
