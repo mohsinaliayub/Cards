@@ -85,6 +85,8 @@ extension Card: Codable {
         
         let id = try container.decode(String.self, forKey: .id)
         self.id = UUID(uuidString: id) ?? UUID()
+        let colorComponents = try container.decode([CGFloat].self, forKey: .backgroundColor)
+        backgroundColor = Color.color(components: colorComponents)
         
         elements += try container.decode([ImageElement].self, forKey: .imageElements)
     }
@@ -93,6 +95,7 @@ extension Card: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         try container.encode(id.uuidString, forKey: .id)
+        try container.encode(backgroundColor.colorComponents(), forKey: .backgroundColor)
         
         let imageElements = elements.compactMap { $0 as? ImageElement }
         try container.encode(imageElements, forKey: .imageElements)
