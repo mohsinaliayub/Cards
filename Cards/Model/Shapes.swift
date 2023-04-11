@@ -172,7 +172,21 @@ struct Polygon: Shape {
     
     func path(in rect: CGRect) -> Path {
         Path { path in
-            
+            let radius = min(rect.midX, rect.midY)
+            // Divide 360 degree angle equally for each side
+            let angle = CGFloat.pi * 2 / CGFloat(sides)
+            // Find the angle for side, then use angle with radius to draw the line
+            let points: [CGPoint] = (0..<sides).map { index in
+                let currentAngle = angle * CGFloat(index)
+                let x = radius * cos(currentAngle) + radius
+                let y = radius * sin(currentAngle) + radius
+                return CGPoint(x: x, y: y)
+            }
+            path.move(to: points[0])
+            for i in 1..<points.count {
+                path.addLine(to: points[i])
+            }
+            path.closeSubpath()
         }
     }
 }
