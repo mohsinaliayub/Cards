@@ -42,12 +42,18 @@ extension ImageElement: Codable {
         } else {
             image = Image("error-image")
         }
+        if let index = try container.decodeIfPresent(Int.self, forKey: .frame) {
+            frame = Shapes.shapes[index]
+        }
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(transform, forKey: .transform)
         try container.encode(imageFilename, forKey: .imageFilename)
+        if let index = Shapes.shapes.firstIndex(where: { $0 == frame }) {
+            try container.encode(index, forKey: .frame)
+        }
     }
 }
 
