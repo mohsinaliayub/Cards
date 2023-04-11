@@ -11,6 +11,7 @@ struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @State private var currentModal: CardModal?
     @State private var stickerImage: UIImage?
+    @State private var images: [UIImage] = []
     @Binding var card: Card
     
     var content: some View {
@@ -43,6 +44,14 @@ struct CardDetailView: View {
                                 card.addElement(uiImage: stickerImage)
                             }
                             stickerImage = nil
+                        }
+                case .photoPicker:
+                    PhotoPicker(images: $images)
+                        .onDisappear {
+                            for image in images {
+                                card.addElement(uiImage: image)
+                            }
+                            images = []
                         }
                 default:
                     EmptyView()
