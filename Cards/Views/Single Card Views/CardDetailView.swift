@@ -18,37 +18,30 @@ struct CardDetailView: View {
         ZStack {
             card.backgroundColor
                 .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    viewState.selectedElement = nil
+                }
             ForEach(card.elements, id: \.id) { element in
-                CardElementView(element: element)
-                    .contextMenu(menuItems: {
+                CardElementView(element: element,
+                                selected: viewState.selectedElement?.id == element.id)
+                    .contextMenu {
                         Button(action: { card.remove(element)}) {
                             Label("Delete", systemImage: "trash")
                         }
-                    })
+                    }
                     .resizableView(transform: bindingTransform(for: element))
                     .frame(width: element.transform.size.width,
                            height: element.transform.size.height)
+                    .onTapGesture {
+                        viewState.selectedElement = element
+                    }
             }
         }
     }
     
     var body: some View {
         content
-            .onDrop(of: [.image], isTargeted: nil) { itemProviders in
-                for item in itemProviders {
-                    if item.canLoadObject(ofClass: UIImage.self) {
-                        item.loadObject(ofClass: UIImage.self) { image, _ in
-                            if let image = image as? UIImage {
-                                DispatchQueue.main.async {
-                                    card.addElement(uiImage: image)
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                return true
-            }
+            .onDrop(of: [.image], delegate: CardDrop(card: $card))
             .modifier(CardToolbar(currentModal: $currentModal))
             .sheet(item: $currentModal) { item in
                 switch item {
@@ -68,6 +61,8 @@ struct CardDetailView: View {
                             }
                             images = []
                         }
+                case .framePicker:
+                    EmptyView()
                 default:
                     EmptyView()
                 }

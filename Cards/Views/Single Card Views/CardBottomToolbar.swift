@@ -33,6 +33,7 @@ struct ToolbarButtonView: View {
 
 struct CardBottomToolbar: View {
     @Binding var cardModal: CardModal?
+    @EnvironmentObject var viewState: ViewState
     
     var body: some View {
         HStack(alignment: .bottom) {
@@ -43,6 +44,7 @@ struct CardBottomToolbar: View {
             Button(action: { cardModal = .framePicker }) {
                 ToolbarButtonView(modal: .framePicker)
             }
+            .disabled(viewState.selectedElement == nil || !(viewState.selectedElement.self is ImageElement))
             
             Button(action: { cardModal = .stickerPicker }) {
                 ToolbarButtonView(modal: .stickerPicker)
@@ -58,6 +60,7 @@ struct CardBottomToolbar: View {
 struct CardBottomToolbar_Previews: PreviewProvider {
     static var previews: some View {
         CardBottomToolbar(cardModal: .constant(.stickerPicker))
+            .environmentObject(ViewState())
             .previewLayout(.sizeThatFits)
             .padding()
     }

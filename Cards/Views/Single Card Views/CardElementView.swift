@@ -9,13 +9,18 @@ import SwiftUI
 
 struct CardElementView: View {
     let element: CardElement
+    let selected: Bool
     
     var body: some View {
         if let element = element as? ImageElement {
             ImageElementView(element: element)
+                .border(Settings.borderColor,
+                        width: selected ? Settings.borderWidth : 0)
         }
         if let element = element as? TextElement {
             TextElementView(element: element)
+                .border(Settings.borderColor,
+                        width: selected ? Settings.borderWidth : 0)
         }
     }
 }
@@ -45,7 +50,6 @@ struct TextElementView: View {
 
 struct CardElementView_Previews: PreviewProvider {
     static var previews: some View {
-        CardElementView(element: initialElements[0])
-        CardElementView(element: initialElements[3])
+        CardElementView(element: initialElements[0], selected: false)
     }
 }
