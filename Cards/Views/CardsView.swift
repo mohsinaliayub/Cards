@@ -16,7 +16,15 @@ struct CardsView: View {
     
     var body: some View {
         ZStack {
-            CardsListView()
+            VStack {
+                Button(action: {
+                    viewState.selectedCard = store.addCard()
+                    viewState.showAllCards = false
+                }) {
+                    Text("Add")
+                }
+                CardsListView()
+            }
             // If we're not displaying all cards, show SingleCardView.
             // We're only putting SingleCardView in front of CardsListView,
             // to keep the same scrolling position when user moves back to list view.
