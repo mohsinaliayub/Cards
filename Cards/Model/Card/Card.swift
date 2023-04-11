@@ -8,20 +8,34 @@
 import SwiftUI
 
 struct Card: Identifiable {
-    let id = UUID()
+    var id = UUID()
     var backgroundColor: Color = .yellow
     var elements: [CardElement] = []
     
+    /// Removes the element from card, and deletes the saved image if the removed
+    /// element is an image.
     mutating func remove(_ element: CardElement) {
         if let index = element.index(in: elements) {
             elements.remove(at: index)
+            if let element = element as? ImageElement {
+                UIImage.remove(name: element.imageFilename)
+            }
+            
+            // After removing an element, we save the card to local disk since
+            // there's an update to the card.
+            save()
         }
     }
     
     mutating func addElement(uiImage: UIImage) {
+        let imageFilename = uiImage.save()
         let image = Image(uiImage: uiImage)
-        let element = ImageElement(image: image)
+        
+        let element = ImageElement(image: image, imageFilename: imageFilename)
         elements.append(element)
+        
+        // We added new element, so save to disk.
+        save()
     }
     
     
@@ -38,10 +52,49 @@ struct Card: Identifiable {
             var newElement = element
             newElement.frame = frame
             elements[index] = newElement
+            
+            // After updating, save the card to local disk.
+            save()
         }
     }
     
     func save() {
-        print("Saving data")
+        let filename = "\(id).card"
+        guard let fileURL = FileManager.documentURL?.appending(path: filename) else {
+            return
+        }
+        
+        do {
+            let encoder = JSONEncoder(); encoder.outputFormatting = .prettyPrinted
+            let data = try encoder.encode(self)
+            
+            try data.write(to: fileURL)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+}
+
+extension Card: Codable {
+    enum CodingKeys: CodingKey {
+        case id, backgroundColor, imageElements, textElements
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let id = try container.decode(String.self, forKey: .id)
+        self.id = UUID(uuidString: id) ?? UUID()
+        
+        elements += try container.decode([ImageElement].self, forKey: .imageElements)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id.uuidString, forKey: .id)
+        
+        let imageElements = elements.compactMap { $0 as? ImageElement }
+        try container.encode(imageElements, forKey: .imageElements)
     }
 }

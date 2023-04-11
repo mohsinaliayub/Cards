@@ -17,3 +17,5 @@ struct Transform {
     /// The location of the view on screen relative to the center of its parent.
     var offset: CGSize = .zero
 }
+
+extension Transform: Codable { }
