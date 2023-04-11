@@ -13,9 +13,7 @@ struct CardElementView: View {
     
     var body: some View {
         if let element = element as? ImageElement {
-            ImageElementView(element: element)
-                .border(Settings.borderColor,
-                        width: selected ? Settings.borderWidth : 0)
+            ImageElementView(element: element, selected: selected)
         }
         if let element = element as? TextElement {
             TextElementView(element: element)
@@ -27,13 +25,21 @@ struct CardElementView: View {
 
 struct ImageElementView: View {
     let element: ImageElement
+    let selected: Bool
     
     var body: some View {
         if let frame = element.frame {
             content
                 .clipShape(frame)
+                .overlay {
+                    frame.stroke(Settings.borderColor,
+                                 lineWidth: selected ? Settings.borderWidth : 0)
+                }
+                .contentShape(frame)
         } else {
             content
+                .border(Settings.borderColor,
+                        width: selected ? Settings.borderWidth : 0)
         }
     }
     
@@ -59,6 +65,6 @@ struct TextElementView: View {
 
 struct CardElementView_Previews: PreviewProvider {
     static var previews: some View {
-        CardElementView(element: initialElements[0], selected: false)
+        CardElementView(element: initialElements[0], selected: true)
     }
 }

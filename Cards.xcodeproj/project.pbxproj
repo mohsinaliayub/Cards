@@ -159,12 +159,11 @@
 		6843805E29DB7ECB00CE3C68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6843808D29E58D4600CE3C68 /* Shape */,
 				6843807829DC17B100CE3C68 /* Card */,
 				6843805329DB6E6E00CE3C68 /* ViewState.swift */,
 				6843805929DB780D00CE3C68 /* CardModal.swift */,
 				6843806129DB80D000CE3C68 /* Transform.swift */,
-				6843808729E56C0700CE3C68 /* Shapes.swift */,
-				6843808B29E5760400CE3C68 /* AnyShape.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +214,15 @@
 				6843808929E5752D00CE3C68 /* FramePicker.swift */,
 			);
 			path = "Card Modal Views";
+			sourceTree = "<group>";
+		};
+		6843808D29E58D4600CE3C68 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				6843808B29E5760400CE3C68 /* AnyShape.swift */,
+				6843808729E56C0700CE3C68 /* Shapes.swift */,
+			);
+			path = Shape;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
