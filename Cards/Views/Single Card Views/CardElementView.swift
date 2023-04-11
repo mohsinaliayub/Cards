@@ -29,6 +29,15 @@ struct ImageElementView: View {
     let element: ImageElement
     
     var body: some View {
+        if let frame = element.frame {
+            content
+                .clipShape(frame)
+        } else {
+            content
+        }
+    }
+    
+    var content: some View {
         element.image
             .resizable()
             .aspectRatio(contentMode: .fit)

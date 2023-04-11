@@ -22,6 +22,7 @@ struct ImageElement: CardElement {
     let id = UUID()
     var transform = Transform()
     var image: Image
+    var frame: AnyShape?
 }
 
 struct TextElement: CardElement {
