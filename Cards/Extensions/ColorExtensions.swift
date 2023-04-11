@@ -21,4 +21,33 @@ extension Color {
     static func random() -> Color {
         colors.randomElement() ?? .black
     }
+    
+    /// Convert a color to its aRGB components.
+    /// - Returns: An array of [red, green, blue, alpha] color components.
+    func colorComponents() -> [CGFloat] {
+        let uiColor = UIColor(self)
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        uiColor.getRed(
+            &red,
+            green: &green,
+            blue: &blue,
+            alpha: &alpha)
+        return [red, green, blue, alpha]
+    }
+    
+    /// Create a color from red, green, blue and alpha components.
+    ///
+    /// - Parameter components: Array of color components [red, green, blue, alpha] specifically in that order.
+    static func color(components color: [CGFloat]) -> Color {
+        let uiColor = UIColor(
+            red: color[0],
+            green: color[1],
+            blue: color[2],
+            alpha: color[3])
+        return Color(uiColor)
+    }
 }
