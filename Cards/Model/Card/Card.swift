@@ -38,6 +38,13 @@ struct Card: Identifiable {
         save()
     }
     
+    mutating func addElement(_ textElement: TextElement) {
+        elements.append(textElement)
+        
+        // since we updated our card, we need to save.
+        save()
+    }
+    
     
     /// Updates the card element with a frame(shape).
     ///
@@ -88,6 +95,8 @@ extension Card: Codable {
         let colorComponents = try container.decode([CGFloat].self, forKey: .backgroundColor)
         backgroundColor = Color.color(components: colorComponents)
         
+        elements = []
+        elements += try container.decode([TextElement].self, forKey: .textElements)
         elements += try container.decode([ImageElement].self, forKey: .imageElements)
     }
     
@@ -99,5 +108,8 @@ extension Card: Codable {
         
         let imageElements = elements.compactMap { $0 as? ImageElement }
         try container.encode(imageElements, forKey: .imageElements)
+        
+        let textElements = elements.compactMap { $0 as? TextElement }
+        try container.encode(textElements, forKey: .textElements)
     }
 }

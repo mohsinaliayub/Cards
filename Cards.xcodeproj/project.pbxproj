@@ -42,6 +42,7 @@
 		6843808F29E59C6A00CE3C68 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843808E29E59C6A00CE3C68 /* FileManagerExtensions.swift */; };
 		6843809129E59CCF00CE3C68 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843809029E59CCE00CE3C68 /* UIImageExtensions.swift */; };
 		6843809329E5A37300CE3C68 /* AngleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843809229E5A37300CE3C68 /* AngleExtensions.swift */; };
+		6843809529E6A52E00CE3C68 /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843809429E6A52E00CE3C68 /* TextPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		6843808E29E59C6A00CE3C68 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		6843809029E59CCE00CE3C68 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		6843809229E5A37300CE3C68 /* AngleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift; sourceTree = "<group>"; };
+		6843809429E6A52E00CE3C68 /* TextPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				6843808129E4A3A000CE3C68 /* StickerPicker.swift */,
 				6843808329E5101A00CE3C68 /* PhotoPicker.swift */,
 				6843808929E5752D00CE3C68 /* FramePicker.swift */,
+				6843809429E6A52E00CE3C68 /* TextPicker.swift */,
 			);
 			path = "Card Modal Views";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				6843808A29E5752D00CE3C68 /* FramePicker.swift in Sources */,
 				6843805A29DB780D00CE3C68 /* CardModal.swift in Sources */,
 				6843807129DC147900CE3C68 /* PreviewData.swift in Sources */,
+				6843809529E6A52E00CE3C68 /* TextPicker.swift in Sources */,
 				6843808229E4A3A000CE3C68 /* StickerPicker.swift in Sources */,
 				6843808C29E5760400CE3C68 /* AnyShape.swift in Sources */,
 				6843807C29DC231E00CE3C68 /* CardElementView.swift in Sources */,

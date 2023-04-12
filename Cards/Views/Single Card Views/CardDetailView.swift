@@ -15,6 +15,7 @@ struct CardDetailView: View {
     @State private var images: [UIImage] = []
     @State private var frame: AnyShape?
     @Binding var card: Card
+    @State private var textElement = TextElement()
     
     var content: some View {
         ZStack {
@@ -79,8 +80,15 @@ struct CardDetailView: View {
                             }
                             frame = nil
                         }
-                default:
-                    EmptyView()
+                case .textPicker:
+                    TextPicker(textElement: $textElement)
+                        .onDisappear {
+                            if !textElement.text.isEmpty {
+                                card.addElement(textElement)
+                            }
+                            textElement = TextElement()
+                        }
+                
                 }
             }
     }
