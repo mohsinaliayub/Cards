@@ -19,8 +19,24 @@ class CardStore: ObservableObject {
         cards.firstIndex  { $0.id == card.id }
     }
     
+    func addCard() -> Card {
+        let card = Card(backgroundColor: Color.random())
+        cards.append(card)
+        card.save()
+        
+        return card
+    }
+    
     func remove(_ card: Card) {
         if let index = index(for: card) {
+            for element in cards[index].elements {
+                cards[index].remove(element)
+            }
+            UIImage.remove(name: card.id.uuidString)
+            if let filepath = FileManager.documentURL?
+                .absoluteURL.appendingPathComponent("\(card.id.uuidString).card") {
+                try? FileManager.default.removeItem(at: filepath)
+            }
             cards.remove(at: index)
         }
     }
@@ -50,13 +66,5 @@ extension CardStore {
         }
         
         return cards
-    }
-    
-    func addCard() -> Card {
-        let card = Card(backgroundColor: Color.random())
-        cards.append(card)
-        card.save()
-        
-        return card
     }
 }

@@ -22,10 +22,16 @@ struct ResizableView: ViewModifier {
     /// It will be set back to 1 after the magnification gesture is finished.
     @State private var scale: CGFloat = 1.0
     
+    private let viewScale: CGFloat
+    
+    init(transform: Binding<Transform>, viewScale: CGFloat = 1) {
+        _transform = transform; self.viewScale = viewScale
+    }
+    
     func body(content: Content) -> some View {
         let dragGesture = DragGesture()
             .onChanged { value in
-                transform.offset = value.translation + previousOffset
+                transform.offset = value.translation / viewScale + previousOffset
             }
             .onEnded { _ in
                 previousOffset = transform.offset
@@ -50,10 +56,11 @@ struct ResizableView: ViewModifier {
             }
         
         content
-            .frame(width: transform.size.width, height: transform.size.height)
+            .frame(width: transform.size.width * viewScale,
+                   height: transform.size.height * viewScale)
             .rotationEffect(transform.rotation)
             .scaleEffect(scale)
-            .offset(transform.offset)
+            .offset(transform.offset * viewScale)
             .gesture(dragGesture)
             .gesture(SimultaneousGesture(rotationGesture, scaleGesture))
             .onAppear {
