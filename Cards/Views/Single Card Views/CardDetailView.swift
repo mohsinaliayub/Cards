@@ -44,8 +44,6 @@ struct CardDetailView: View {
     
     var body: some View {
         content
-            .onDrop(of: [.image], delegate: CardDrop(card: $card))
-            .modifier(CardToolbar(currentModal: $currentModal))
             .onChange(of: scenePhase, perform: { newScenePhase in
                 if newScenePhase == .inactive {
                     card.save()
@@ -54,43 +52,9 @@ struct CardDetailView: View {
             .onDisappear {
                 card.save()
             }
-            .sheet(item: $currentModal) { item in
-                switch item {
-                case .stickerPicker:
-                    StickerPicker(stickerImage: $stickerImage)
-                        .onDisappear {
-                            if let stickerImage = stickerImage {
-                                card.addElement(uiImage: stickerImage)
-                            }
-                            stickerImage = nil
-                        }
-                case .photoPicker:
-                    PhotoPicker(images: $images)
-                        .onDisappear {
-                            for image in images {
-                                card.addElement(uiImage: image)
-                            }
-                            images = []
-                        }
-                case .framePicker:
-                    FramePicker(frame: $frame)
-                        .onDisappear {
-                            if let frame = frame {
-                                card.update(viewState.selectedElement, frame: frame)
-                            }
-                            frame = nil
-                        }
-                case .textPicker:
-                    TextPicker(textElement: $textElement)
-                        .onDisappear {
-                            if !textElement.text.isEmpty {
-                                card.addElement(textElement)
-                            }
-                            textElement = TextElement()
-                        }
-                
-                }
-            }
+            .onDrop(of: [.image], delegate: CardDrop(card: $card))
+            .modifier(CardToolbar(currentModal: $currentModal))
+            .cardModals(card: $card, currentModal: $currentModal)
     }
     
     private func bindingTransform(for element: CardElement) -> Binding<Transform> {
