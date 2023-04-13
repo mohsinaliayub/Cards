@@ -12,18 +12,26 @@ struct CardsListView: View {
     @EnvironmentObject var store: CardStore
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack {
-                ForEach(store.cards) { card in
-                    CardThumbnailView(card: card)
-                        .contextMenu {
-                            Button(action: { store.remove(card) }) {
-                                Label("Delete", systemImage: "trash")
+        GeometryReader { proxy in
+            ScrollView(showsIndicators: false) {
+                LazyVGrid(columns: columns(size: proxy.size)) {
+                    ForEach(store.cards) { card in
+                        CardThumbnailView(card: card, size: proxy.size)
+                            .contextMenu {
+                                Button(action: { store.remove(card) }) {
+                                    Label("Delete", systemImage: "trash")
+                                }
                             }
-                        }
+                    }
                 }
             }
         }
+    }
+    
+    func columns(size: CGSize) -> [GridItem] {
+        [
+            GridItem(.adaptive(minimum: Settings.thumbnailSize(size: size).width))
+        ]
     }
 }
 

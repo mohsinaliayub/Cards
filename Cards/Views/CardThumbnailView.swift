@@ -10,12 +10,14 @@ import SwiftUI
 struct CardThumbnailView: View {
     @EnvironmentObject var viewState: ViewState
     let card: Card
+    var size: CGSize = .zero
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 15)
-            .foregroundColor(card.backgroundColor)
-            .frame(width: Settings.thumbnailSize.width,
-                   height: Settings.thumbnailSize.height)
+        card.backgroundColor
+            .cornerRadius(10)
+            .frame(width: Settings.thumbnailSize(size: size).width,
+                   height: Settings.thumbnailSize(size: size).height)
+            .shadow(color: Color("shadow-color"), radius: 3, x: 0, y: 0)
             .onTapGesture {
                 viewState.showAllCards.toggle()
                 viewState.selectedCard = card

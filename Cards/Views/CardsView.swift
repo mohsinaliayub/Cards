@@ -16,14 +16,10 @@ struct CardsView: View {
     
     var body: some View {
         ZStack {
+            CardsListView()
             VStack {
-                Button(action: {
-                    viewState.selectedCard = store.addCard()
-                    viewState.showAllCards = false
-                }) {
-                    Text("Add")
-                }
-                CardsListView()
+                Spacer()
+                createButton
             }
             // If we're not displaying all cards, show SingleCardView.
             // We're only putting SingleCardView in front of CardsListView,
@@ -32,6 +28,25 @@ struct CardsView: View {
                 SingleCardView()
             }
         }
+        .background {
+            Color("background")
+                .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    var createButton: some View {
+        Button(action: {
+            viewState.selectedCard = store.addCard()
+            viewState.showAllCards = false
+        }) {
+            Label("Create New", systemImage: "plus")
+                .frame(maxWidth: .infinity)
+        }
+        .font(.system(size: 16, weight: .bold))
+        .padding([.top, .bottom], 10)
+        .background(Color("barColor"))
+        .padding(.bottom)
+        .tint(.white)
     }
 }
 
@@ -40,5 +55,10 @@ struct CardsView_Previews: PreviewProvider {
         CardsView()
             .environmentObject(ViewState())
             .environmentObject(CardStore(defaultData: true))
+        
+        CardsView()
+            .environmentObject(ViewState())
+            .environmentObject(CardStore(defaultData: true))
+            .preferredColorScheme(.dark)
     }
 }

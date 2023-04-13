@@ -17,7 +17,7 @@ struct CardDetailView: View {
     @Binding var card: Card
     @State private var textElement = TextElement()
     
-    var content: some View {
+    func content(size: CGSize) -> some View {
         ZStack {
             card.backgroundColor
                 .edgesIgnoringSafeArea(.all)
@@ -32,7 +32,7 @@ struct CardDetailView: View {
                             Label("Delete", systemImage: "trash")
                         }
                     }
-                    .resizableView(transform: bindingTransform(for: element))
+                    .resizableView(transform: bindingTransform(for: element), viewScale: calculateScale(size))
                     .frame(width: element.transform.size.width,
                            height: element.transform.size.height)
                     .onTapGesture {
@@ -43,18 +43,24 @@ struct CardDetailView: View {
     }
     
     var body: some View {
-        content
-            .onChange(of: scenePhase, perform: { newScenePhase in
-                if newScenePhase == .inactive {
+        GeometryReader { proxy in
+            content(size: proxy.size)
+                .onChange(of: scenePhase, perform: { newScenePhase in
+                    if newScenePhase == .inactive {
+                        card.save()
+                    }
+                })
+                .onDisappear {
                     card.save()
                 }
-            })
-            .onDisappear {
-                card.save()
-            }
-            .onDrop(of: [.image], delegate: CardDrop(card: $card))
-            .modifier(CardToolbar(currentModal: $currentModal))
-            .cardModals(card: $card, currentModal: $currentModal)
+                .onDrop(of: [.image], delegate: CardDrop(card: $card))
+                .modifier(CardToolbar(currentModal: $currentModal))
+                .cardModals(card: $card, currentModal: $currentModal)
+                .frame(width: calculateSize(proxy.size).width,
+                       height: calculateSize(proxy.size).height)
+                .clipped() // clip the background color, so it doesn't go out of frame
+                .frame(maxWidth: .infinity, maxHeight: .infinity) // center the view in geometry reader
+        }
     }
     
     private func bindingTransform(for element: CardElement) -> Binding<Transform> {
@@ -63,6 +69,27 @@ struct CardDetailView: View {
         }
         
         return $card.elements[index].transform
+    }
+    
+    /// Calculate the size of the card with correct aspect ratio using a given size.
+    private func calculateSize(_ size: CGSize) -> CGSize {
+        var newSize = size
+        let ratio = Settings.cardSize.width / Settings.cardSize.height
+        
+        if size.width < size.height {
+            newSize.height = min(size.height, newSize.width / ratio)
+            newSize.width = min(size.width, newSize.height * ratio)
+        } else {
+            newSize.width = min(size.width, newSize.height * ratio)
+            newSize.height = min(size.height, newSize.width / ratio)
+        }
+        return newSize
+    }
+    
+    /// Calculate the scale of the card with correct aspect ratio using a given size.
+    private func calculateScale(_ size: CGSize) -> CGFloat {
+        let newSize = calculateSize(size)
+        return newSize.width / Settings.cardSize.width
     }
 }
 
