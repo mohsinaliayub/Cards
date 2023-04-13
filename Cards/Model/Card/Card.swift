@@ -11,6 +11,8 @@ struct Card: Identifiable {
     var id = UUID()
     var backgroundColor: Color = .yellow
     var elements: [CardElement] = []
+    var image: UIImage?
+    var shareImage: UIImage?
     
     /// Removes the element from card, and deletes the saved image if the removed
     /// element is an image.
