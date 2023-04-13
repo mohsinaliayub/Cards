@@ -15,24 +15,35 @@ struct CardsView: View {
     @EnvironmentObject var store: CardStore
     
     var body: some View {
-        ZStack {
-            CardsListView()
-            VStack {
-                Spacer()
-                createButton
+        VStack(spacing: 8) {
+            // show the picker if we are displaying all cards
+            if viewState.showAllCards {
+                ListSelectionView(selection: $viewState.cardListState)
             }
-            // If we're not displaying all cards, show SingleCardView.
-            // We're only putting SingleCardView in front of CardsListView,
-            // to keep the same scrolling position when user moves back to list view.
-            if !viewState.showAllCards {
-                SingleCardView()
-                    .zIndex(1)
-                    .transition(.move(edge: .bottom))
+            ZStack {
+                switch viewState.cardListState {
+                case .list:
+                    CardsListView()
+                case .carousel:
+                    Carousel()
+                }
+                VStack {
+                    Spacer()
+                    createButton
+                }
+                // If we're not displaying all cards, show SingleCardView.
+                // We're only putting SingleCardView in front of CardsListView,
+                // to keep the same scrolling position when user moves back to list view.
+                if !viewState.showAllCards {
+                    SingleCardView()
+                        .zIndex(1)
+                        .transition(.move(edge: .bottom))
+                }
             }
+            .background {
+                Color("background")
+                    .edgesIgnoringSafeArea(.all)
         }
-        .background {
-            Color("background")
-                .edgesIgnoringSafeArea(.all)
         }
     }
     

@@ -51,6 +51,7 @@
 		684380AF29E8AA5F00CE3C68 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380AA29E8AA5F00CE3C68 /* AppFonts.swift */; };
 		684380B129E8AC9D00CE3C68 /* AppLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380B029E8AC9D00CE3C68 /* AppLoadingView.swift */; };
 		684380B329E8ACA600CE3C68 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380B229E8ACA600CE3C68 /* SplashScreen.swift */; };
+		68ABD3D529E8B56D00969DE4 /* ListSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ABD3D429E8B56D00969DE4 /* ListSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		684380AA29E8AA5F00CE3C68 /* AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		684380B029E8AC9D00CE3C68 /* AppLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingView.swift; sourceTree = "<group>"; };
 		684380B229E8ACA600CE3C68 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		68ABD3D429E8B56D00969DE4 /* ListSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				6843805D29DB7E9B00CE3C68 /* Single Card Views */,
 				6843804D29DB6C8300CE3C68 /* CardsListView.swift */,
 				6843805529DB6F9E00CE3C68 /* CardsView.swift */,
+				68ABD3D429E8B56D00969DE4 /* ListSelectionView.swift */,
 				6843804F29DB6D7300CE3C68 /* CardThumbnailView.swift */,
 				6843804029DB6BF000CE3C68 /* ContentView.swift */,
 			);
@@ -351,6 +354,7 @@
 				6843806F29DB93CB00CE3C68 /* CardToolbar.swift in Sources */,
 				6843805629DB6F9E00CE3C68 /* CardsView.swift in Sources */,
 				684380AC29E8AA5F00CE3C68 /* RenderableView.swift in Sources */,
+				68ABD3D529E8B56D00969DE4 /* ListSelectionView.swift in Sources */,
 				6843804129DB6BF000CE3C68 /* ContentView.swift in Sources */,
 				6843804E29DB6C8300CE3C68 /* CardsListView.swift in Sources */,
 				6843805429DB6E6E00CE3C68 /* ViewState.swift in Sources */,
