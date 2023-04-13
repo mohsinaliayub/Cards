@@ -48,13 +48,9 @@ private struct SplashAnimation: ViewModifier {
         content
             .offset(y: animating ? -700 : finalYPosition)
             .rotationEffect(animating ? .zero : Angle(degrees: Double.random(in: -10...10)))
+            .animation(Animation.interpolatingSpring(mass: 0.2, stiffness: 80, damping: 5).delay(delay), value: animating)
             .onAppear {
-                withAnimation(
-                    Animation.interpolatingSpring(
-                        mass: 0.2, stiffness: 80,
-                        damping: 5, initialVelocity: 0).delay(delay)) {
-                    animating = false
-                }
+                animating = false
             }
     }
 }
