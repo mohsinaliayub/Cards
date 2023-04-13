@@ -49,6 +49,8 @@
 		684380AD29E8AA5F00CE3C68 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380A729E8AA5F00CE3C68 /* ShareSheetView.swift */; };
 		684380AE29E8AA5F00CE3C68 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380A929E8AA5F00CE3C68 /* TextView.swift */; };
 		684380AF29E8AA5F00CE3C68 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380AA29E8AA5F00CE3C68 /* AppFonts.swift */; };
+		684380B129E8AC9D00CE3C68 /* AppLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380B029E8AC9D00CE3C68 /* AppLoadingView.swift */; };
+		684380B329E8ACA600CE3C68 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380B229E8ACA600CE3C68 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		684380A729E8AA5F00CE3C68 /* ShareSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
 		684380A929E8AA5F00CE3C68 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		684380AA29E8AA5F00CE3C68 /* AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		684380B029E8AC9D00CE3C68 /* AppLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingView.swift; sourceTree = "<group>"; };
+		684380B229E8ACA600CE3C68 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 			children = (
 				6843807D29E49E2200CE3C68 /* Info.plist */,
 				6843803E29DB6BF000CE3C68 /* CardsApp.swift */,
+				684380B029E8AC9D00CE3C68 /* AppLoadingView.swift */,
+				684380B229E8ACA600CE3C68 /* SplashScreen.swift */,
 				6843806829DB8E5C00CE3C68 /* Config */,
 				6843806529DB8B6D00CE3C68 /* Extensions */,
 				6843805E29DB7ECB00CE3C68 /* Model */,
@@ -351,6 +357,7 @@
 				6843803F29DB6BF000CE3C68 /* CardsApp.swift in Sources */,
 				6843805229DB6DDF00CE3C68 /* SingleCardView.swift in Sources */,
 				6843809329E5A37300CE3C68 /* AngleExtensions.swift in Sources */,
+				684380B129E8AC9D00CE3C68 /* AppLoadingView.swift in Sources */,
 				684380AF29E8AA5F00CE3C68 /* AppFonts.swift in Sources */,
 				6843809729E6BD4700CE3C68 /* CardModalViews.swift in Sources */,
 				6843805C29DB783700CE3C68 /* CardBottomToolbar.swift in Sources */,
@@ -379,6 +386,7 @@
 				6843807329DC14C500CE3C68 /* TextExtensions.swift in Sources */,
 				6843805829DB725400CE3C68 /* CardDetailView.swift in Sources */,
 				6843808429E5101A00CE3C68 /* PhotoPicker.swift in Sources */,
+				684380B329E8ACA600CE3C68 /* SplashScreen.swift in Sources */,
 				6843806C29DB8FE900CE3C68 /* ColorExtensions.swift in Sources */,
 				6843809129E59CCF00CE3C68 /* UIImageExtensions.swift in Sources */,
 			);
