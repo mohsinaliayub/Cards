@@ -32,7 +32,6 @@
 		6843807729DC17AA00CE3C68 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843807629DC17AA00CE3C68 /* Card.swift */; };
 		6843807A29DC184C00CE3C68 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843807929DC184C00CE3C68 /* CardStore.swift */; };
 		6843807C29DC231E00CE3C68 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843807B29DC231E00CE3C68 /* CardElementView.swift */; };
-		6843807F29E4A2EB00CE3C68 /* Stickers in Resources */ = {isa = PBXBuildFile; fileRef = 6843807E29E4A2EA00CE3C68 /* Stickers */; };
 		6843808229E4A3A000CE3C68 /* StickerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843808129E4A3A000CE3C68 /* StickerPicker.swift */; };
 		6843808429E5101A00CE3C68 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843808329E5101A00CE3C68 /* PhotoPicker.swift */; };
 		6843808629E517ED00CE3C68 /* CardDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843808529E517ED00CE3C68 /* CardDrop.swift */; };
@@ -52,6 +51,10 @@
 		684380B129E8AC9D00CE3C68 /* AppLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380B029E8AC9D00CE3C68 /* AppLoadingView.swift */; };
 		684380B329E8ACA600CE3C68 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684380B229E8ACA600CE3C68 /* SplashScreen.swift */; };
 		68ABD3D529E8B56D00969DE4 /* ListSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ABD3D429E8B56D00969DE4 /* ListSelectionView.swift */; };
+		68ABD3DC29E8C3CC00969DE4 /* tent.png in Resources */ = {isa = PBXBuildFile; fileRef = 68ABD3D829E8C3CC00969DE4 /* tent.png */; };
+		68ABD3DD29E8C3CC00969DE4 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 68ABD3D929E8C3CC00969DE4 /* fire.png */; };
+		68ABD3DE29E8C3CC00969DE4 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 68ABD3DA29E8C3CC00969DE4 /* tree.png */; };
+		68ABD3DF29E8C3CC00969DE4 /* guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 68ABD3DB29E8C3CC00969DE4 /* guitar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +85,6 @@
 		6843807929DC184C00CE3C68 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		6843807B29DC231E00CE3C68 /* CardElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElementView.swift; sourceTree = "<group>"; };
 		6843807D29E49E2200CE3C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		6843807E29E4A2EA00CE3C68 /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stickers; path = "../../../../Documents/Books Code/suia-materials-editions-1.0/16-adding-assets-to-your-app/assets/Stickers"; sourceTree = "<group>"; };
 		6843808129E4A3A000CE3C68 /* StickerPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicker.swift; sourceTree = "<group>"; };
 		6843808329E5101A00CE3C68 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		6843808529E517ED00CE3C68 /* CardDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDrop.swift; sourceTree = "<group>"; };
@@ -102,6 +104,10 @@
 		684380B029E8AC9D00CE3C68 /* AppLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingView.swift; sourceTree = "<group>"; };
 		684380B229E8ACA600CE3C68 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		68ABD3D429E8B56D00969DE4 /* ListSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelectionView.swift; sourceTree = "<group>"; };
+		68ABD3D829E8C3CC00969DE4 /* tent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tent.png; sourceTree = "<group>"; };
+		68ABD3D929E8C3CC00969DE4 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		68ABD3DA29E8C3CC00969DE4 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
+		68ABD3DB29E8C3CC00969DE4 /* guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +148,7 @@
 				6843806529DB8B6D00CE3C68 /* Extensions */,
 				6843805E29DB7ECB00CE3C68 /* Model */,
 				6843804C29DB6C5700CE3C68 /* Views */,
-				6843807E29E4A2EA00CE3C68 /* Stickers */,
+				68ABD3D629E8C3CC00969DE4 /* Stickers */,
 				684380A429E8AA5F00CE3C68 /* Supporting Code */,
 				6843804229DB6BF100CE3C68 /* Assets.xcassets */,
 				6843804429DB6BF100CE3C68 /* Preview Content */,
@@ -280,6 +286,25 @@
 			path = "Text Entry";
 			sourceTree = "<group>";
 		};
+		68ABD3D629E8C3CC00969DE4 /* Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				68ABD3D729E8C3CC00969DE4 /* Camping */,
+			);
+			path = Stickers;
+			sourceTree = "<group>";
+		};
+		68ABD3D729E8C3CC00969DE4 /* Camping */ = {
+			isa = PBXGroup;
+			children = (
+				68ABD3D829E8C3CC00969DE4 /* tent.png */,
+				68ABD3D929E8C3CC00969DE4 /* fire.png */,
+				68ABD3DA29E8C3CC00969DE4 /* tree.png */,
+				68ABD3DB29E8C3CC00969DE4 /* guitar.png */,
+			);
+			path = Camping;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,8 +364,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6843804629DB6BF100CE3C68 /* Preview Assets.xcassets in Resources */,
-				6843807F29E4A2EB00CE3C68 /* Stickers in Resources */,
+				68ABD3DD29E8C3CC00969DE4 /* fire.png in Resources */,
+				68ABD3DC29E8C3CC00969DE4 /* tent.png in Resources */,
 				6843804329DB6BF100CE3C68 /* Assets.xcassets in Resources */,
+				68ABD3DF29E8C3CC00969DE4 /* guitar.png in Resources */,
+				68ABD3DE29E8C3CC00969DE4 /* tree.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

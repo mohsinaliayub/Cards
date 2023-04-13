@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D5B5E0A6-8D74-4E46-B381-D6FA2E8DC535"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23342A82-73FA-42D9-9C1C-034E00AAA812"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cards/Views/Single Card Views/Card Modal Views/StickerPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "loadStickers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "23342A82-73FA-42D9-9C1C-034E00AAA812 - 21c4bbae5977d17c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1280">
+               </Location>
+               <Location
+                  uuid = "23342A82-73FA-42D9-9C1C-034E00AAA812 - 21c4bbae5977d72e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1280">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C1C5B37-14FB-4530-855A-EA82F5728159"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cards/Views/Single Card Views/Card Modal Views/StickerPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "loadStickers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5C1C5B37-14FB-4530-855A-EA82F5728159 - 21c4bbae5977d053"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1124">
+               </Location>
+               <Location
+                  uuid = "5C1C5B37-14FB-4530-855A-EA82F5728159 - 21c4bbae5977d053"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1248">
+               </Location>
+               <Location
+                  uuid = "5C1C5B37-14FB-4530-855A-EA82F5728159 - 21c4bbae5977d605"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1124">
+               </Location>
+               <Location
+                  uuid = "5C1C5B37-14FB-4530-855A-EA82F5728159 - 21c4bbae5977d605"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B529684-6A29-4887-904B-D9788D89EE2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cards/Views/Single Card Views/Card Modal Views/StickerPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "loadStickers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5B529684-6A29-4887-904B-D9788D89EE2A - 21c4bbae5977d074"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "632">
+               </Location>
+               <Location
+                  uuid = "5B529684-6A29-4887-904B-D9788D89EE2A - 21c4bbae5977d626"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cards.StickerPicker.loadStickers() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Cards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mohsinaliayub/Projects/iOS%20Learning/Cards/Cards/Views/Single%20Card%20Views/Card%20Modal%20Views/StickerPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "632">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC769D31-77B1-42FE-944F-F7DFBBF8B03F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cards/Views/Single Card Views/Card Modal Views/StickerPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "loadStickers(withNames:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C3A81D5-1238-4EF8-89CE-8E957BB3FEFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cards/Views/Single Card Views/Card Modal Views/StickerPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "loadStickers(withNames:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

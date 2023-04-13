@@ -12,6 +12,10 @@ struct StickerPicker: View {
     @State private var stickerNames: [String] = []
     @Environment(\.dismiss) private var dismiss
     
+    private let stickerFileNames = [
+        "tent", "fire", "tree", "guitar"
+    ]
+    
     private let columns = [
         GridItem(.adaptive(minimum: 120), spacing: 10)
     ]
@@ -31,8 +35,18 @@ struct StickerPicker: View {
             }
         }
         .onAppear {
-            stickerNames = loadStickers()
+            stickerNames = loadStickers(withNames: stickerFileNames)
         }
+    }
+    
+    func loadStickers(withNames: [String]) -> [String] {
+        var stickers = [String]()
+        for stickerFileName in stickerFileNames {
+            if let fileUrl = Bundle.main.url(forResource: stickerFileName, withExtension: ".png") {
+                stickers.append(fileUrl.path())
+            }
+        }
+        return stickers
     }
     
     func loadStickers() -> [String] {
@@ -41,8 +55,8 @@ struct StickerPicker: View {
         
         // Get the top level folders inside /Stickers directory
         let fileManager = FileManager.default
-        if let resourcePath = Bundle.main.resourcePath,
-           let enumerator = fileManager.enumerator(
+        let resourcePath = Bundle.main.bundlePath
+        if let enumerator = fileManager.enumerator(
             at: URL(filePath: resourcePath + "/Stickers", directoryHint: .isDirectory),
             includingPropertiesForKeys: nil,
             options: [
