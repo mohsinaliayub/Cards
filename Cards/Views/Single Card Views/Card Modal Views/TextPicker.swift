@@ -10,16 +10,26 @@ import SwiftUI
 struct TextPicker: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var textElement: TextElement
+    @FocusState var textIsFocused: Bool
+    
+    init(textElement: Binding<TextElement>) {
+        self._textElement = textElement
+        self.textIsFocused = true
+    }
     
     var body: some View {
-        TextField("Enter text", text: $textElement.text)
-            .textFieldStyle(.roundedBorder)
-            .font(.custom(textElement.textFont, size: 20))
-            .autocorrectionDisabled()
-            .padding()
-            .onSubmit {
-                dismiss()
-            }
+        VStack {
+            TextField("Enter text", text: $textElement.text)
+                .focused($textIsFocused, equals: true)
+                .font(.custom(textElement.textFont, size: 30))
+                .foregroundColor(textElement.textColor)
+                .autocorrectionDisabled()
+                .padding()
+                .onSubmit {
+                    dismiss()
+                }
+            TextView(font: $textElement.textFont, color: $textElement.textColor)
+        }
     }
 }
 
