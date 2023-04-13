@@ -26,6 +26,8 @@ struct CardsView: View {
             // to keep the same scrolling position when user moves back to list view.
             if !viewState.showAllCards {
                 SingleCardView()
+                    .zIndex(1)
+                    .transition(.move(edge: .bottom))
             }
         }
         .background {
@@ -37,7 +39,9 @@ struct CardsView: View {
     var createButton: some View {
         Button(action: {
             viewState.selectedCard = store.addCard()
-            viewState.showAllCards = false
+            withAnimation {
+                viewState.showAllCards = false
+            }
         }) {
             Label("Create New", systemImage: "plus")
                 .frame(maxWidth: .infinity)

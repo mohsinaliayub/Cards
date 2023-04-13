@@ -19,8 +19,10 @@ struct CardThumbnailView: View {
                    height: Settings.thumbnailSize(size: size).height)
             .shadow(color: Color("shadow-color"), radius: 3, x: 0, y: 0)
             .onTapGesture {
-                viewState.showAllCards.toggle()
                 viewState.selectedCard = card
+                withAnimation {
+                    viewState.showAllCards = false
+                }
             }
     }
 }
