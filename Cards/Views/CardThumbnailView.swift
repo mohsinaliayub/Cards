@@ -13,17 +13,25 @@ struct CardThumbnailView: View {
     var size: CGSize = .zero
     
     var body: some View {
-        card.backgroundColor
-            .cornerRadius(10)
-            .frame(width: Settings.thumbnailSize(size: size).width,
-                   height: Settings.thumbnailSize(size: size).height)
-            .shadow(color: Color("shadow-color"), radius: 3, x: 0, y: 0)
-            .onTapGesture {
-                viewState.selectedCard = card
-                withAnimation {
-                    viewState.showAllCards = false
-                }
+        Group {
+            if let image = UIImage.load(uuidString: card.id.uuidString) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } else {
+                card.backgroundColor
             }
+        }
+        .cornerRadius(10)
+        .frame(width: Settings.thumbnailSize(size: size).width,
+               height: Settings.thumbnailSize(size: size).height)
+        .shadow(color: Color("shadow-color"), radius: 3, x: 0, y: 0)
+        .onTapGesture {
+            viewState.selectedCard = card
+            withAnimation {
+                viewState.showAllCards = false
+            }
+        }
     }
 }
 

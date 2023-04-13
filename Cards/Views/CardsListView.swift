@@ -14,7 +14,7 @@ struct CardsListView: View {
     var body: some View {
         GeometryReader { proxy in
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: columns(size: proxy.size)) {
+                LazyVGrid(columns: columns(size: proxy.size), spacing: 30) {
                     ForEach(store.cards) { card in
                         CardThumbnailView(card: card, size: proxy.size)
                             .contextMenu {
