@@ -43,24 +43,26 @@ struct CardDetailView: View {
     }
     
     var body: some View {
-        GeometryReader { proxy in
-            content(size: proxy.size)
-                .onChange(of: scenePhase, perform: { newScenePhase in
-                    if newScenePhase == .inactive {
+        RenderableView(card: $card) {
+            GeometryReader { proxy in
+                content(size: proxy.size)
+                    .onChange(of: scenePhase, perform: { newScenePhase in
+                        if newScenePhase == .inactive {
+                            card.save()
+                        }
+                    })
+                    .onDisappear {
                         card.save()
                     }
-                })
-                .onDisappear {
-                    card.save()
-                }
-                .onDrop(of: [.image], delegate: CardDrop(card: $card))
-                .modifier(CardToolbar(currentModal: $currentModal))
-                .cardModals(card: $card, currentModal: $currentModal)
-                .frame(width: calculateSize(proxy.size).width,
-                       height: calculateSize(proxy.size).height)
-                .clipped() // clip the background color, so it doesn't go out of frame
-                .frame(maxWidth: .infinity, maxHeight: .infinity) // center the view in geometry reader
+                    .onDrop(of: [.image], delegate: CardDrop(card: $card))
+                    .frame(width: calculateSize(proxy.size).width,
+                           height: calculateSize(proxy.size).height)
+                    .clipped() // clip the background color, so it doesn't go out of frame
+                    .frame(maxWidth: .infinity, maxHeight: .infinity) // center the view in geometry reader
+            }
         }
+        .modifier(CardToolbar(currentModal: $currentModal))
+        .cardModals(card: $card, currentModal: $currentModal)
     }
     
     private func bindingTransform(for element: CardElement) -> Binding<Transform> {

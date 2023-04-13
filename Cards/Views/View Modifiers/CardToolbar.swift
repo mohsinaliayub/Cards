@@ -24,6 +24,15 @@ struct CardToolbar: ViewModifier {
                     }
                 }
                 
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        viewState.shouldScreenshot = true
+                        currentModal = .shareSheet
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                }
+                
                 ToolbarItem(placement: .bottomBar) {
                     CardBottomToolbar(cardModal: $currentModal)
                 }

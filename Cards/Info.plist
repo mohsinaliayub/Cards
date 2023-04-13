@@ -11,5 +11,7 @@
 		<key>UILaunchScreen</key>
 		<dict/>
 	</dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Cards will save your card to the photo library.</string>
 </dict>
 </plist>

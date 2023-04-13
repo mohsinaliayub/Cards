@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CardListState {
+enum CardListState: Int {
     case list, carousel
 }
 
